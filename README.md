@@ -24,6 +24,9 @@ To build automatically:
 1. On Linux/OSX run `./build.sh windows2008` to build the Windows box or `./build.sh ubuntu1404` to build the Linux box. On Windows, run `build_win2008.ps1` in a powershell terminal to build the Windows box.
 2. If the command completes successfully, run `vagrant up`.
 3. When this process completes, you should be able to open the VM within VirtualBox and login. The default credentials are U: `vagrant` and P: `vagrant`.
+4. If the initial build fails, look in packer/templates/ubuntu_1404.json and refer to [this answer](https://stackoverflow.com/questions/31788902/packer-build-fails-due-to-tty-needed-for-sudo) if chef fails to install and execute properly
+5. It is also important to note that the username and password must be set as vagrant/vagrant during installation, or else the ssh installation will fail.
+6. VirtualBox Guest Additions chef recipe has been commented out, as it is consistently failing during installation
 
 To build manually:
 
